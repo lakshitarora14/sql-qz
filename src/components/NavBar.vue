@@ -10,13 +10,13 @@ function restartWalkthrough() {
   <header class="nav-bar px-4 flex justify-between items-center">
     <div class="flex">
       <h1 class="text-blue-400 font-bold mr-4">
-        <a href="#/">SQL QZ</a>
+        <RouterLink to="/">SQL QZ</RouterLink>
       </h1>
       <span class="mr-4 text-gray-700">
-        <a href="#/sql">SQL Parser</a>
+        <RouterLink to="/sql">SQL Parser</RouterLink>
       </span>
       <span class="text-gray-700">
-        <a href="#/csv">CSV Reader</a>
+        <RouterLink to="/csv">CSV Reader</RouterLink>
       </span>
     </div>
     <el-tooltip :show-arrow="false" content="Play Walkthrough" placement="bottom">
@@ -29,5 +29,8 @@ function restartWalkthrough() {
 <style lang="scss" scoped>
 .nav-bar {
   height: 5vh;
+}
+.router-link-exact-active {
+  font-weight: bold;
 }
 </style>

@@ -10,10 +10,10 @@
           ORGANISED
         </div>
         <el-button class="mt-12 outer-container__cover-button" size="large" type="info">
-          <a href="#/sql">SQL Parser</a></el-button
+          <RouterLink to="/sql">SQL Parser</RouterLink></el-button
         >
         <el-button size="large" class="mt-12 outer-container__cover-button" type="info">
-          <a href="#/csv">CSV Reader</a></el-button
+          <RouterLink to="/csv">CSV Reader</RouterLink></el-button
         >
       </div>
     </div>
