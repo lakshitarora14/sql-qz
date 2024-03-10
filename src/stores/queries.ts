@@ -7,7 +7,22 @@ export const useQueriesStore = defineStore('queries', () => {
     {
       id: uuid.v4(),
       name: 'Saved Query 1',
-      query: 'SELECT * FROM users'
+      query: `WITH employee_ranking AS (
+        SELECT
+      employee_id,
+      last_name,
+      first_name,
+      salary,
+      RANK() OVER (ORDER BY salary DESC) as ranking
+  FROM employee
+)
+  SELECT
+  employee_id,
+    last_name,
+    first_name,
+    salary
+  FROM employee_ranking
+  WHERE ranking = 2`
     },
     {
       id: uuid.v4(),
@@ -20,7 +35,7 @@ export const useQueriesStore = defineStore('queries', () => {
       id: 'f0acef22-7f28-42b7-a607-e89fc64c4206',
       name: 'Query 1',
       time: '10/03/2024, 09:11:40',
-      query: 'SELECT * FROM users SELECT * FROM users SELECT * FROM users SELECT * FROM users',
+      query: 'SELECT * FROM users',
       message: '1334234 rows returned',
       duration: '0.9sec'
     },

@@ -68,7 +68,7 @@ const handleTabsEdit = (targetName: string, action: 'remove' | 'add') => {
             :sqlQuery="item.query"
             @on:search="(e) => (item.query = e)"
           />
-          <!--          <listing-table class="outer-container__listing-table" :query="item.query" />-->
+          <listing-table class="outer-container__listing-table" :query="item.query" />
         </div>
       </el-tab-pane>
     </el-tabs>

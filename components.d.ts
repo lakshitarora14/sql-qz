@@ -21,7 +21,9 @@ declare module 'vue' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
     Export: typeof import('./src/components/Export.vue')['default']
+    FileReader: typeof import('./src/components/csvReader/FileReader.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HistoryBox: typeof import('./src/components/HistoryBox.vue')['default']
     HistoryQuery: typeof import('./src/components/HistoryQuery.vue')['default']
@@ -35,8 +37,12 @@ declare module 'vue' {
     SavedQuery: typeof import('./src/components/SavedQuery.vue')['default']
     SavedSearch: typeof import('./src/components/SavedSearch.vue')['default']
     SqlEditor: typeof import('./src/components/SqlEditor.vue')['default']
+    TableComponent: typeof import('./src/components/csvReader/TableComponent.vue')['default']
     TableDropdown: typeof import('./src/components/TableDropdown.vue')['default']
     TableStructure: typeof import('./src/components/TableStructure.vue')['default']
     TabSection: typeof import('./src/components/TabSection.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

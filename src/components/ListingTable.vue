@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import { DATASET } from '@/datasets/sample.ts'
 
 const props = defineProps({
   query: {
@@ -7,31 +8,22 @@ const props = defineProps({
     default: ''
   }
 })
-const generateColumns = (length = 10, prefix = 'column-', props?: any) =>
-  Array.from({ length }).map((_, columnIndex) => ({
-    ...props,
-    key: `${prefix}${columnIndex}`,
-    dataKey: `${prefix}${columnIndex}`,
-    title: `Column ${columnIndex}`,
-    width: 150
-  }))
 
-const generateData = (columns: ReturnType<typeof generateColumns>, length = 200, prefix = 'row-') =>
-  Array.from({ length }).map((_, rowIndex) => {
-    return columns.reduce(
-      (rowData, column, columnIndex) => {
-        rowData[column.dataKey] = `Row ${rowIndex} - Col ${columnIndex}`
-        return rowData
-      },
-      {
-        id: `${prefix}${rowIndex}`,
-        parentId: null
-      }
-    )
+function generateColumnsFromJson(data) {
+  const result = []
+  Object.keys(data).forEach((key) => {
+    console.log(key)
+    result.push({
+      key: key,
+      dataKey: key,
+      title: key,
+      width: key === 'bio' ? 950 : 150
+    })
   })
+  return result
+}
 
-const columns = generateColumns(10)
-const data = generateData(columns, 200)
+const columns = generateColumnsFromJson(DATASET[0])
 </script>
 
 <template>
@@ -39,8 +31,8 @@ const data = generateData(columns, 200)
     <el-auto-resizer>
       <template #default="{ height, width }">
         <el-table-v2
-          :columns="query.length ? columns : []"
-          :data="query.length ? data : []"
+          :columns="props.query.length ? columns : []"
+          :data="props.query.length ? DATASET : []"
           :width="width"
           :height="height"
           fixed

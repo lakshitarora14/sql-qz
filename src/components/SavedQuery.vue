@@ -84,7 +84,7 @@ function runQuery() {
         v-if="state.previewMode"
         disabled
         v-model="state.tempQuery"
-        :rows="3"
+        :autosize="{ minRows: 3 }"
         type="textarea"
         placeholder="Query"
       />
@@ -93,7 +93,12 @@ function runQuery() {
   <div v-else class="m-2 border p-2 rounded-md">
     <div><el-input v-model="state.tempName" placeholder="Name" /></div>
     <div class="mt-2">
-      <el-input v-model="state.tempQuery" :rows="3" type="textarea" placeholder="Query" />
+      <el-input
+        v-model="state.tempQuery"
+        :autosize="{ minRows: 3 }"
+        type="textarea"
+        placeholder="Query"
+      />
     </div>
     <div class="flex items-center justify-end mt-2">
       <el-tooltip content="Save" :show-arrow="false">

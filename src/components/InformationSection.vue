@@ -28,9 +28,8 @@ function expandDescription() {
           <el-tooltip :show-arrow="false" content="Open Query Assist" placement="bottom">
             <el-button
               :icon="FullScreen"
-              size="small"
-              circle
-              plain
+              size="large"
+              link
               type="info"
               @click="expandDescription"
             />

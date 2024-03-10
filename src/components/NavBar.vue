@@ -20,7 +20,7 @@ function restartWalkthrough() {
       </span>
     </div>
     <el-tooltip :show-arrow="false" content="Play Walkthrough" placement="bottom">
-      <el-button plain type="primary" circle :icon="VideoCamera" @click="restartWalkthrough" />
+      <el-button plain type="info" circle :icon="VideoCamera" @click="restartWalkthrough" />
       ></el-tooltip
     >
   </header>

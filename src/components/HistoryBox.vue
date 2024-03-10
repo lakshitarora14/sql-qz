@@ -33,12 +33,12 @@ function deleteQuery(query: any) {
       :key="queriesStore.queryHistoryCount"
     >
       <el-table-column type="index" width="50" />
-      <el-table-column prop="time" label="Time" width="180" />
+      <el-table-column prop="time" label="Date,Time" width="180" />
       <el-table-column prop="name" label="Name" width="180" />
       <el-table-column prop="query" label="Query" />
       <el-table-column prop="message" label="Message" width="180" />
       <el-table-column prop="duration" label="Duration" width="120" />
-      <el-table-column label="Operations">
+      <el-table-column label="Operations" width="120">
         <template #default="scope">
           <el-tooltip content="Run Query" :show-arrow="false">
             <el-button circle type="success" plain :icon="DArrowRight" @click="runQuery(scope.row)">
