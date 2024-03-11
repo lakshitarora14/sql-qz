@@ -43,6 +43,7 @@ onMounted(() => {
 
 function search() {
   if (!props.sqlQuery.length) {
+    // @ts-ignore
     ElNotification({
       title: 'Error',
       message: 'Query is empty.',
@@ -68,6 +69,7 @@ function clearSearch() {
 }
 function saveQuery() {
   if (!props.sqlQuery.length) {
+    // @ts-ignore
     ElNotification({
       title: 'Error',
       message: 'Query is empty.',
@@ -84,6 +86,7 @@ function saveQuery() {
       }
     })?.length
   ) {
+    // @ts-ignore
     ElNotification({
       title: 'Error',
       message: 'Query with same name already exists',
@@ -101,6 +104,7 @@ function exportQuery() {
   if (!state.sqlQuery.length) {
     return
   }
+  // @ts-ignore
   ElNotification({
     title: 'Info',
     message: 'Export Query',
@@ -114,6 +118,7 @@ function copyQuery() {
     return
   }
   navigator.clipboard.writeText(state.sqlQuery).then(() => {
+    // @ts-ignore
     ElNotification({
       title: 'Success',
       message: 'Query Copied to Clipboard',

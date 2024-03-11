@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { DATASET } from '@/datasets/sample.ts'
+import { DATASET } from '@/datasets/sample'
 
 const props = defineProps({
   query: {
@@ -9,10 +9,9 @@ const props = defineProps({
   }
 })
 
-function generateColumnsFromJson(data) {
-  const result = []
+function generateColumnsFromJson(data: Record<string, any>) {
+  const result: Array<Record<string, any>> = []
   Object.keys(data).forEach((key) => {
-    console.log(key)
     result.push({
       key: key,
       dataKey: key,

@@ -11,6 +11,7 @@ let tabIndex = 0
 const handleTabsEdit = (targetName: string, action: 'remove' | 'add') => {
   if (action === 'add') {
     if (queriesStore.currentQueriesCount > 9) {
+      // @ts-ignore
       ElNotification({
         title: 'Error',
         message: 'Maximum Tab Limit Reached!!',

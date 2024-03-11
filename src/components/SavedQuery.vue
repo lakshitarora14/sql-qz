@@ -38,6 +38,7 @@ function deleteSavedQuery() {
 }
 
 function saveChanges() {
+  // @ts-ignore
   queriesStore.editSavedQuery(props.query.id, state.tempName, state.tempQuery)
   state.isEdit = false
 }

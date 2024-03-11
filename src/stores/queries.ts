@@ -60,8 +60,8 @@ export const useQueriesStore = defineStore('queries', () => {
       query: 'SELECT * FROM orders Query 2'
     }
   ])
+
   const curerntTab = ref(currentQueries[0].name)
-  const savedQueriesCount = computed(() => savedQueries.length)
 
   const queryHistoryCount = computed(() => queryHistory.length)
 
@@ -82,6 +82,7 @@ export const useQueriesStore = defineStore('queries', () => {
   const getCurrentTab = computed(() => {
     return curerntTab.value
   })
+
   function saveQueryToList(listName: string, query: Record<string, any>) {
     const obj = {
       id: uuid.v4(),
@@ -128,7 +129,6 @@ export const useQueriesStore = defineStore('queries', () => {
 
   return {
     savedQueriesData,
-    savedQueriesCount,
     saveQueryToList,
     removeSavedQuery,
     queryHistoryData,

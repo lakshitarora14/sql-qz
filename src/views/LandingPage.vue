@@ -9,12 +9,16 @@
           KEEP YOUR DATA <br />
           ORGANISED
         </div>
-        <el-button class="mt-12 outer-container__cover-button" size="large" type="info">
-          <RouterLink to="/sql">SQL Parser</RouterLink></el-button
-        >
-        <el-button size="large" class="mt-12 outer-container__cover-button" type="info">
-          <RouterLink to="/csv">CSV Reader</RouterLink></el-button
-        >
+        <RouterLink class="mr-4" to="/sql">
+          <el-button class="mt-12 outer-container__cover-button" size="large" type="info">
+            SQL Parser</el-button
+          >
+        </RouterLink>
+        <RouterLink to="/csv">
+          <el-button size="large" class="mt-12 outer-container__cover-button" type="info">
+            CSV Reader</el-button
+          >
+        </RouterLink>
       </div>
     </div>
     <div class="flex justify-center items-center">
