@@ -3,7 +3,7 @@
 ## Overview
 
 URL:
-https://sql-qz.vercel.app/csv
+[https://sql-qz.vercel.app/](https://sql-qz.vercel.app/)
 
 This Vue3 + Vite + Typescript application is a powerful tool designed for data analysis tasks, offering a streamlined and efficient user experience. With features such as CSV reader, SQL Parser along with utilizing technologies like web workers, virtual scrolling, lazy loading etc allow for seamless handling of large files and thus analysts can effortlessly manage their data. This app is responsive for different screen sizes, it supports small laptops as well as bug monitors. This has support for VAPT as well as there are tooltips for every icon, alt for images, html structure for SEO etc.
 
