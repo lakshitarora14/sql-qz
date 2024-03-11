@@ -39,7 +39,7 @@ onMounted(() => {
 })
 
 function search() {
-  if (!props.sqlQuery.length) {
+  if (!state.sqlQuery.length) {
     // @ts-ignore
     ElNotification({
       title: 'Error',
@@ -65,7 +65,7 @@ function clearSearch() {
   emit('on:search', state.sqlQuery)
 }
 function saveQuery() {
-  if (!props.sqlQuery.length) {
+  if (!state.sqlQuery.length) {
     // @ts-ignore
     ElNotification({
       title: 'Error',
