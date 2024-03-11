@@ -4,7 +4,6 @@ import { Codemirror } from 'vue-codemirror'
 import { sql } from '@codemirror/lang-sql'
 import { CopyDocument, FolderAdd, DataAnalysis, CircleClose } from '@element-plus/icons-vue'
 import { useQueriesStore } from '@/stores/queries'
-import { uuid } from 'vue-uuid'
 
 const queriesStore = useQueriesStore()
 
@@ -20,10 +19,7 @@ const EDITOR_OPTIONS = {
   mode: 'text/x-sql',
   showHint: true
 }
-// const MANDATORY_RULE = {
-//   required: true,
-//   message: 'Query can not be empty'
-// }
+
 const state = reactive({
   sqlQuery: '' as string,
   saveName: '' as string,
@@ -37,6 +33,7 @@ const props = defineProps({
     required: false
   }
 })
+
 onMounted(() => {
   state.sqlQuery = props.sqlQuery
 })
@@ -198,8 +195,5 @@ function copyQuery() {
 .sql-outer {
   display: grid;
   grid-template-columns: 90% 10%;
-  &__sql-buttons {
-    //border: 2px solid blue;
-  }
 }
 </style>

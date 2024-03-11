@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
-import TabSection from '@/components/TabSection.vue'
-import InformationSection from '@/components/InformationSection.vue'
+const TabSection = defineAsyncComponent(() => import('./../components/TabSection.vue'))
+const InformationSection = defineAsyncComponent(
+  () => import('./../components/InformationSection.vue')
+)
 const LeftSection = defineAsyncComponent(() => import('./../components/LeftSection.vue'))
 const HistoryBox = defineAsyncComponent(() => import('./../components/HistoryBox.vue'))
 </script>
