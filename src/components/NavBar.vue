@@ -2,7 +2,14 @@
 import { VideoCamera } from '@element-plus/icons-vue'
 
 function restartWalkthrough() {
-  console.log('Restarting Walkthrough')
+  // @ts-ignore
+  ElNotification({
+    title: 'Info',
+    message: 'Walkthrough creation is still under progress.',
+    duration: 2000,
+    type: 'info',
+    position: 'bottom-right'
+  })
 }
 </script>
 
