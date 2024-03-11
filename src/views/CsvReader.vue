@@ -16,7 +16,9 @@ const state = reactive({
   searchQuery: '' as string,
   searchColumnFilter: '' as string,
   filteredData: [] as Array<Record<string, any>>,
-  rowCount: 0 as number
+  searchMode: false as Boolean,
+  rowCount: 0 as number,
+  filteredRowCount: 0 as number
 })
 
 function search() {
@@ -38,16 +40,19 @@ function search() {
     searchColumnFilter: state.searchColumnFilter
   })
   worker.onmessage = (e) => {
+    state.searchMode = true
     state.isSearchLoading = false
-    state.parsedData = e.data
+    state.filteredData = e.data.result
+    state.filteredRowCount = e.data.count
   }
 }
 
 function clearData() {
-  state.parsedData = []
-  state.generatedColumns = []
+  state.searchMode = false
   state.searchQuery = ''
   state.searchColumnFilter = ''
+  state.filteredData.length = 0
+  state.filteredRowCount = 0
 }
 
 function generateColumns(data: Record<string, any>) {
@@ -130,15 +135,19 @@ onBeforeUnmount(() => {
         >
           Search
         </el-button>
-        <el-button type="info" plain class="col-span-1" @click="clearData"> Clear Data </el-button>
-        <span class="col-span-2 ml-2">Total no of records : {{ state.rowCount }} </span>
+        <el-button type="info" plain class="col-span-1" @click="clearData">
+          Clear Search
+        </el-button>
+        <span class="col-span-2 ml-2"
+          >Total no of records : {{ state.searchMode ? state.filteredRowCount : state.rowCount }}
+        </span>
       </div>
       <el-auto-resizer class="border rounded-md">
         <template #default="{ height, width }">
           <el-table-v2
-            v-loading="state.isParseLoading"
+            v-loading="state.isParseLoading || state.isSearchLoading"
             :columns="state.generatedColumns"
-            :data="state.parsedData"
+            :data="state.searchMode ? state.filteredData : state.parsedData"
             :width="width"
             :height="height"
           />

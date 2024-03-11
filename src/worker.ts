@@ -11,5 +11,6 @@ self.onmessage = (event: any) => {
   const result = parsedData.filter((item: any) => {
     return item[searchColumnFilter].toLowerCase().includes(searchQuery.toLowerCase())
   })
-  postMessage(result)
+
+  postMessage({ result, count: result.length })
 }
