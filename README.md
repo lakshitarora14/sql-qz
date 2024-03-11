@@ -5,7 +5,17 @@
 URL:
 https://sql-qz.vercel.app/csv
 
-This Vue.js + Vite application is a powerful tool designed for data analysis tasks, offering a streamlined and efficient user experience. With features such as CSV reader, SQL Parser along with utilizing technologies like web workers, virtual scrolling, lazy loading etc allow for seamless handling of large files and thus analysts can effortlessly manage their data.
+This Vue.js + Vite application is a powerful tool designed for data analysis tasks, offering a streamlined and efficient user experience. With features such as CSV reader, SQL Parser along with utilizing technologies like web workers, virtual scrolling, lazy loading etc allow for seamless handling of large files and thus analysts can effortlessly manage their data. This app is responsive for different screen sizes, it supports small laptops as well as bug monitors.
+
+## Product Walkthrough
+
+https://youtu.be/L4OQwxhXzcM
+
+## Screens
+![homePage](https://github.com/lakshitarora14/sql-qz/assets/44324506/484b3ee9-bdc3-4ad8-845b-6ed649cb7857)
+![Sql Parser](https://github.com/lakshitarora14/sql-qz/assets/44324506/2e6ba615-f297-43d8-8193-77bd245d432c)
+![Csv Reader](https://github.com/lakshitarora14/sql-qz/assets/44324506/7f83a92e-b50d-4a24-9434-d003c3bb7a1f)
+
 
 ## Features
 
