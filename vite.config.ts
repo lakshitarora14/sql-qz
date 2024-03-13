@@ -12,7 +12,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
-    viteCompression(),
+    viteCompression({ algorithm: 'brotliCompress' }),
     AutoImport({
       resolvers: [ElementPlusResolver()]
     }),
