@@ -5,8 +5,8 @@ const queriesStore = useQueriesStore()
 
 function runQuery(query: any) {
   if (
-    queriesStore.queryHistoryData.filter((historyQuery) => {
-      if (historyQuery.id === query.id) {
+    queriesStore.currentQueriesData.filter((historyQuery) => {
+      if (historyQuery.name === query.name) {
         return query
       }
     })?.length
@@ -14,7 +14,7 @@ function runQuery(query: any) {
     queriesStore.setCurrentTab(query.name)
     return
   }
-  const item: any = queriesStore.savedQueriesData.find((query) => query.name === query.name)
+  const item: any = queriesStore.queryHistoryData.find((queryObj) => query.name === queryObj.name)
   queriesStore.saveQueryToList('currentQueries', item)
   queriesStore.setCurrentTab(query.name)
 }

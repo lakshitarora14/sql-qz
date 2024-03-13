@@ -28,6 +28,9 @@ const handleTabsEdit = (targetName: string, action: 'remove' | 'add') => {
     })
     queriesStore.setCurrentTab(name)
   } else if (action === 'remove') {
+    if (tabIndex > 0) {
+      --tabIndex
+    }
     let activeName = queriesStore.getCurrentTab
     if (activeName === targetName) {
       queriesStore.currentQueriesData.forEach((tab, index) => {
